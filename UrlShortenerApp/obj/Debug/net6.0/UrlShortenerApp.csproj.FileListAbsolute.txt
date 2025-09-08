@@ -1,0 +1,5 @@
+D:\Work\Learning Projects\UrlShortenerApp\obj\Debug\net6.0\UrlShortenerApp.csproj.AssemblyReference.cache
+D:\Work\Learning Projects\UrlShortenerApp\obj\Debug\net6.0\UrlShortenerApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\Learning Projects\UrlShortenerApp\obj\Debug\net6.0\UrlShortenerApp.AssemblyInfoInputs.cache
+D:\Work\Learning Projects\UrlShortenerApp\obj\Debug\net6.0\UrlShortenerApp.AssemblyInfo.cs
+D:\Work\Learning Projects\UrlShortenerApp\obj\Debug\net6.0\UrlShortenerApp.csproj.CoreCompileInputs.cache
