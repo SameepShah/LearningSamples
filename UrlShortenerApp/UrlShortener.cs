@@ -97,5 +97,12 @@ namespace UrlShortenerApp
         {
             return _urlMap.TryGetValue(code, out var entry) ? entry : null;
         }
+
+        public IEnumerable<ShortUrlEntry> FindUrlsByOriginalUrl(string originalUrl)
+        {
+            return _urlMap.Values
+                .Where(entry => entry.OriginalUrl.Contains(originalUrl, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
     }
 } 

@@ -35,7 +35,8 @@ namespace UrlShortenerApp
                 Console.WriteLine("1. Shorten a URL");
                 Console.WriteLine("2. Retrieve a URL");
                 Console.WriteLine("3. View URL Statistics");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Find Shortcode by URL");
+                Console.WriteLine("5. Exit");
                 Console.Write("Select an option: ");
                 var choice = Console.ReadLine();
 
@@ -88,6 +89,27 @@ namespace UrlShortenerApp
                         }
                         break;
                     case "4":
+                        Console.Write("Enter part of the original URL to search: ");
+                        var searchUrl = Console.ReadLine();
+                        var foundEntries = shortener.FindUrlsByOriginalUrl(searchUrl!);
+                        if (foundEntries.Any())
+                        {
+                            Console.WriteLine("\nFound shortcodes:");
+                            foreach (var entry in foundEntries)
+                            {
+                                Console.WriteLine($"Short Code: {entry.ShortCode}");
+                                Console.WriteLine($"Original URL: {entry.OriginalUrl}");
+                                Console.WriteLine($"Access Count: {entry.AccessCount}");
+                                Console.WriteLine($"Expiry: {(entry.Expiry.HasValue ? entry.Expiry.Value.ToString("u") : "None")}");
+                                Console.WriteLine();
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No matching URLs found.");
+                        }
+                        break;
+                    case "5":
                         return;
                     default:
                         Console.WriteLine("Invalid option. Try again.");
